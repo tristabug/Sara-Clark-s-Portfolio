@@ -1,0 +1,4 @@
+#embeddedPDF.pdfobject-container iframe.pdfobject {
+    position: absolute;
+    overflow: visible !important;
+}
