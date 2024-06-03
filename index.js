@@ -1,0 +1,1 @@
+PDFObject.embed("ClarkSResume_ContactInfoFree.pdf", "#embeddedPDF");
