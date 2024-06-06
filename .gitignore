@@ -2,6 +2,9 @@
 virt/
 .DS_Store
 
+# Items used for reference and not app specific
+docs/tutorial-references-doc.py
+
 # PYTHON ITEMS (from Github)
 # Distribution / packaging
 .Python
