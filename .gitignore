@@ -1,5 +1,6 @@
 *.log
 virt/
+scratch/
 .DS_Store
 
 # Items used for reference and not app specific
