@@ -28,6 +28,10 @@ a.dropdown-item:hover {
     color: var(--main);
 }
 
+.active {
+    color: var(--main);
+}
+
 #footer {
     float: left;
     text-align: center;
