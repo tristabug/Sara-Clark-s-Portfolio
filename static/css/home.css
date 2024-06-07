@@ -1,0 +1,37 @@
+#project-slider {
+    margin-bottom: 3em;
+    min-height: 200px;
+}
+
+div.scroll-container {
+    background-color: var(--main);
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+div.scroll-container img {
+    width: 200px;
+    height: 200px;
+}
+
+#about-me-header {
+    font-size: 70%;
+}
+
+#about-me-name {
+    font-size: 300%;
+}
+
+#about-me-subtitle {
+    font-size: 150%;
+}
+
+#about-me-oneliner {
+    line-height:2.5;
+    color: var(--main);
+    font-style: italic;
+}
+
+.about-me-text {
+    font-size: 80%;
+}
