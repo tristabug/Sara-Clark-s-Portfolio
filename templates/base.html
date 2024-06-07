@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
         {% block styles %}{% endblock %}
+        {% block javascript %}{% endblock %}
+        <script src="https://unpkg.com/pdfobject"></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <title>Sara Clark - {% block title %}{% endblock %}</title>
