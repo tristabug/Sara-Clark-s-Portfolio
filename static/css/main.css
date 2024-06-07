@@ -20,6 +20,14 @@ a:hover {
     color: var(--main);
 }
 
+a.nav-link:hover {
+    color: var(--main);
+}
+
+a.dropdown-item:hover {
+    color: var(--main);
+}
+
 #footer {
     float: left;
     text-align: center;
