@@ -24,3 +24,9 @@ def lors():
 @app.route('/projects')
 def projects():
     return render_template("projects.html")
+
+# skills
+skills = [
+    {'name': "Ruby on Rails", 'years': "3+", 'type': "language"},
+    {'name': "Python", 'years': "3+", 'type': "language"}
+]

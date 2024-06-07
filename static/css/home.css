@@ -3,6 +3,10 @@
     min-height: 200px;
 }
 
+#skills{
+    margin-bottom: 3em;
+}
+
 div.scroll-container {
     background-color: var(--main);
     overflow: auto;
