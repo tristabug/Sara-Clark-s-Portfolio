@@ -11,15 +11,7 @@
         <title>Sara Clark - {% block title %}{% endblock %}</title>
   </head>
   <body>
-    <div id="nav">
-        <ul> 
-            <li id="site-name">Sara Clark's Portfolio</li>
-            <li><a href="/">Home</a></li> 
-            <li><a href="/resume">Resume</a></li>
-            <li><a href="/lors">LORs</a></li>  
-            <li><a href="/projects">Projects</a></li> 
-        </ul> 
-    </div>
+    {% include 'nav.html' %}
     <div id="header"><h3>{% block header %}{% endblock %}</h3></div>
     <div id="content">
       {% block content %}{% endblock %}
