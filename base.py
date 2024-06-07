@@ -15,13 +15,12 @@ def home():
 def resume():
     return render_template("resume.html", title="Resume")
 
-# references page
-@app.route('/references')
-def references():
-    return render_template("references.html", title="References")
-
 # lors page
 @app.route('/lors')
 def lors():
     return render_template("lors.html", title="LORs")
 
+# projects page
+@app.route('/projects')
+def projects():
+    return render_template("projects.html", title="Projects")
