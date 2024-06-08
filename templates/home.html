@@ -1,5 +1,42 @@
 {% extends "base.html" %}
 
-<!-- {% block styles %}{% endblock %} -->
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
 {% block title %}Home{% endblock %}
-{% block content %}{% endblock %}
+{% block content %}
+<div class="row pt-3 pb-4">
+    <div class="col-2"></div>
+    <div class="col-4 pt-5">
+        <p class="lh-1"><span id="about-me-header">Hi! My name is</span></br>
+        <span id="about-me-name">Sara Clark.</span></br>
+        <span id="about-me-subtitle">I'm a Software & App Developer.</span></p>
+        <p class="about-me-text">After two years in tech, I'd say what I really do is solve problems in creative ways with applicable technologies.</br>
+        <span class="text-center" id="about-me-oneliner">I absolutely love what I do.</span></br>
+        I started later in life, making a career pivot in my 30s to pursue software and app development. I enjoy the life-long pursuit of knowledge that development demands, and the constant challenges it brings.</p>
+    </div>
+    <div class="col-3">
+        <img src="/static/assets/Profile_circle.png" class="img-fluid" alt="Photo of Sara Clark.">
+    </div>
+    <div class="col-2"></div>
+</div>
+<div class="row">
+    <div class="col text-end"><h5><a href="/projects">projects</a></h5></div>
+</div>
+<div class="row" id="project-slider">
+    <div class="scroll-container">
+        <img src="static/assets/miniProfilePhoto.jpg" alt="Cinque Terre">
+        <img src="static/assets/miniProfilePhoto.jpg" alt="Forest">
+        <img src="static/assets/miniProfilePhoto.jpg" alt="Northern Lights">
+        <img src="static/assets/miniProfilePhoto.jpg" alt="Mountains">
+        <img src="static/assets/miniProfilePhoto.jpg" alt="Mountains">
+        <img src="static/assets/miniProfilePhoto.jpg" alt="Mountains">
+        <img src="static/assets/miniProfilePhoto.jpg" alt="Mountains">
+        <img src="static/assets/miniProfilePhoto.jpg" alt="Mountains">
+        <img src="static/assets/miniProfilePhoto.jpg" alt="Mountains">
+        <img src="static/assets/miniProfilePhoto.jpg" alt="Mountains">
+        <img src="static/assets/miniProfilePhoto.jpg" alt="Mountains">
+    </div>
+</div>
+
+{% endblock %}

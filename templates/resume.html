@@ -1,11 +1,22 @@
 {% extends "base.html" %}
-
-{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}">{% endblock %}
 <!-- {% block javascript %}{% endblock %} -->
+{% block styles %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/skills.css') }}">
+{% endblock %}
 {% block title %}Resume{% endblock %}
 {% block header %}Resume{% endblock %}
 {% block content %}
   <div>
-    <iframe id="resume-pdf" src="https://docs.google.com/gview?url=https://github.com/tristabug/SaraClarks-Portfolio/raw/preprod/ClarkSResume_ContactInfoFree.pdf&embedded=true&embedded=true" frameborder="0"></iframe>
-  </body>
+    <iframe id="resume-pdf" src="https://docs.google.com/gview?url=https://github.com/tristabug/SaraClarks-Portfolio/raw/preprod/static/assets/ClarkSResume_ContactInfoFree.pdf&embedded=true&embedded=true" frameborder="0"></iframe>
+  </div>
+
+  <div class="row" id="skills">
+    <div class="row">
+        <div class="col text-start"><h5>skills</h5></div>
+    </div>
+    <div class="col-1"></div>
+    <div class="col">{% include 'skills.html' %}</div>
+    <div class="col-1"></div>
+</div>
 {% endblock %}

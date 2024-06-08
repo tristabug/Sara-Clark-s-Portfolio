@@ -1,0 +1,43 @@
+.language, .tool, .methodology, .skill-set, .CMS {
+    padding: .1em;   
+    max-width: 100%;
+}
+
+.language {
+    background-color: var(--main);
+}
+
+.tool {
+    background-color: #80008080;
+}
+
+.skill-set {
+    background-color: #80008060;;
+}
+
+.methodology {
+    background-color: #80008040;
+}
+
+.CMS {
+    background-color: #80008020;
+}
+
+.skill-name {
+    font-size: 70%;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.skill-header {
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.years {
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 80%;
+}

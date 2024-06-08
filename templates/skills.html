@@ -1,0 +1,101 @@
+{% set skills = {
+    'language' : [
+        {'name': "Ruby on Rails", 'years': "3+", 'w': "30"}, 
+        {'name': "Python", 'years': "3+", 'w': "30"},
+        {'name': "SQL", 'years': "3+", 'w': "30"},
+        {'name': "MySQL", 'years': "3+", 'w': "30"},
+        {'name': "C++", 'years': "2+", 'w': "20"},
+        {'name': "C#", 'years': "2+", 'w': "20"},
+        {'name': "Java", 'years': "2+", 'w': "20"},
+        {'name': "HTML", 'years': "7+", 'w': "70"},
+        {'name': "CSS", 'years': "7+", 'w': "70"},
+        {'name': "JavaScript", 'years': "7+", 'w': "70"},
+        {'name': "jQuery", 'years': "7+", 'w': "70"},
+        {'name': "Flask", 'years': "< 1", 'w': "6"}
+    ],
+    'tool' : [
+        {'name': "Git & GitHub", 'years': "3+", 'w': "30"},
+        {'name': "Visual Studio", 'years': "3+", 'w': "30"},
+        {'name': "iTerm", 'years': "3+", 'w': "30"},
+        {'name': "Docker", 'years': "2+", 'w': "20"},
+        {'name': "Bootstrap", 'years': "2+", 'w': "20"},
+        {'name': "Unity", 'years': "2+", 'w': "20"},
+        {'name': "Atlassian Suite", 'years': "3+", 'w': "30"},
+        {'name': "FormAssembly", 'years': "< 1", 'w': "6"},
+        {'name': "Microsoft Suite", 'years': "15+", 'w': "150"},
+        {'name': "Adobe Suite", 'years': "15+", 'w': "150"},
+        {'name': "Notion", 'years': "3+", 'w': "30"},
+        {'name': "Discord", 'years': "3+", 'w': "30"},
+        {'name': "Slack", 'years': "3+", 'w': "30"},
+        {'name': "Canva", 'years': "3+", 'w': "30"}
+    ],
+    'methodology' : [
+        {'name': "Test-Driven Programming", 'years': "2+", 'w': "20"}
+    ],
+    'CMS' : [
+        {'name': "Salesforce", 'years': "< 1", 'w': "6"}
+    ],
+    'skill-set' : [
+        {'name': "Web Design", 'years': "5+", 'w': "50"},
+        {'name': "Leadership", 'years': "7+", 'w': "70"},
+        {'name': "Project Management", 'years': "7+", 'w': "70"},
+        {'name': "Social Media Management", 'years': "10+", 'w': "100"},
+        {'name': "Organization & Planning", 'years': "15+", 'w': "150"},
+        {'name': "Customer Service", 'years': "15+", 'w': "150"}
+    ]}
+%}
+
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <p class="skill-header">Languages/Frameworks</p>
+        </div>
+        {% for skill in skills['language'] %}
+            <div class="row">
+                <div class="col skill-name text-end"><span class="years">({{ skill['years'] }} years)</span> {{ skill['name'] }}</div>
+                <div class="col pt-2 pb-2"><div class="rounded language" style="width:{{ skill['w'] }}%;"></div></div>
+            </div>
+        {%endfor%} 
+        <div class="row pt-2 pb-2"></div>
+        <div class="row">
+            <p class="skill-header">Skill-Sets</p>
+        </div>
+        {% for skill in skills['skill-set'] %}
+            <div class="row">
+                <div class="col skill-name text-end"><span class="years">({{ skill['years'] }} years)</span> {{ skill['name'] }}</div>
+                <div class="col pt-2 pb-2"><div class="rounded skill-set" style="width:{{ skill['w'] }}%;"></div></div>
+            </div>
+        {%endfor%} 
+    </div>
+    <div class="col">
+        <div class="row">
+            <p class="skill-header">Tools</p>
+        </div>
+        {% for skill in skills['tool'] %}
+            <div class="row">
+                <div class="col skill-name text-end"><span class="years">({{ skill['years'] }} years)</span> {{ skill['name'] }}</div>
+                <div class="col pt-2 pb-2"><div class="rounded tool" style="width:{{ skill['w'] }}%;"></div></div>
+            </div>
+        {%endfor%} 
+        <div class="row pt-2 pb-2"></div>
+        <div class="row">
+            <p class="skill-header">Methodologies</p>
+        </div>
+        {% for skill in skills['methodology'] %}
+            <div class="row">
+                <div class="col skill-name text-end"><span class="years">({{ skill['years'] }} years)</span> {{ skill['name'] }}</div>
+                <div class="col pt-2 pb-2"><div class="rounded methodology" style="width:{{ skill['w'] }}%;"></div></div>
+            </div>
+        {%endfor%} 
+        <div class="row pt-2 pb-2"></div>
+        <div class="row">
+            <p class="skill-header">CMS</p>
+        </div>
+        {% for skill in skills['CMS'] %}
+            <div class="row">
+                <div class="col skill-name text-end"><span class="years">({{ skill['years'] }} years)</span> {{ skill['name'] }}</div>
+                <div class="col pt-2 pb-2"><div class="rounded CMS" style="width:{{ skill['w'] }}%;"></div></div>
+            </div>
+        {%endfor%} 
+    </div>
+</div>
