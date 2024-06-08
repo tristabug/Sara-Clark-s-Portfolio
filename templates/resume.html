@@ -1,22 +1,20 @@
 {% extends "base.html" %}
-<!-- {% block javascript %}{% endblock %} -->
-{% block styles %}
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/skills.css') }}">
-{% endblock %}
-{% block title %}Resume{% endblock %}
-{% block header %}Resume{% endblock %}
-{% block content %}
-  <div>
-    <iframe id="resume-pdf" src="https://docs.google.com/gview?url=https://github.com/tristabug/SaraClarks-Portfolio/raw/preprod/static/assets/ClarkSResume_ContactInfoFree.pdf&embedded=true&embedded=true" frameborder="0"></iframe>
-  </div>
 
+{% block javascript %}<script src="static/javascript/base.js"></script>{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='css/skills.css') }}">{% endblock %}
+{% block title %}Resume{% endblock %}
+{% block content %}
+  <div id="current-page" style="display: none;">#resume</div>
+  <div class="row pb-4">
+    <div class="col-2"></div>
+    <div class="col-4"><iframe id="resume-pdf" src="https://docs.google.com/gview?url=https://github.com/tristabug/SaraClarks-Portfolio/raw/preprod/static/assets/ClarkSResume_ContactInfoFree.pdf&embedded=true&embedded=true" frameborder="0"></iframe></div>
+    <div class="col-3"></div>
+    <div class="col-2 flex-column ms-auto">{% include 'nav.html' %}</div>
+  </div>
   <div class="row" id="skills">
-    <div class="row">
-        <div class="col text-start"><h5>skills</h5></div>
-    </div>
-    <div class="col-1"></div>
-    <div class="col">{% include 'skills.html' %}</div>
-    <div class="col-1"></div>
-</div>
+      <h5>skills</h5></div>
+      <div class="col-1"></div>
+      <div class="col">{% include 'skills.html' %}</div>
+      <div class="col-1"></div>
+  </div>
 {% endblock %}

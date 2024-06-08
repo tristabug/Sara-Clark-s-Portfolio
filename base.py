@@ -1,7 +1,5 @@
-# FLASK TEST FILE
 from flask import Flask, render_template
 
-# create a Flask instance
 app = Flask(__name__)
 
 # ROUTES
@@ -16,17 +14,11 @@ def resume():
     return render_template("resume.html")
 
 # lors page
-@app.route('/lors')
-def lors():
-    return render_template("lors.html")
+@app.route('/contact')
+def contact():
+    return render_template("contact.html")
 
 # projects page
 @app.route('/projects')
 def projects():
     return render_template("projects.html")
-
-# skills
-skills = [
-    {'name': "Ruby on Rails", 'years': "3+", 'type': "language"},
-    {'name': "Python", 'years': "3+", 'type': "language"}
-]

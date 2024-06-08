@@ -5,11 +5,17 @@
     --main: purple;
 }
 
+/* nav */
 #site-name {
-    font-size: 150%;
-    color: var(--main);
+    font-weight:bold;
+    font-size: 110%;
 }
 
+.socials {
+    justify-content: end;
+}
+
+/* links */
 a {
     text-decoration: none;
     color: black;
@@ -28,10 +34,12 @@ a.dropdown-item:hover {
     color: var(--main);
 }
 
-.active {
-    color: var(--main);
+ul.navbar-nav li a.active {
+    color: var(--main) !important;
+    font-weight: bold;
 }
 
+/* footer */
 #footer {
     float: left;
     text-align: center;
