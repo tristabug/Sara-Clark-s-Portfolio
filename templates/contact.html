@@ -7,7 +7,50 @@
     <div id="current-page" style="display: none;">#contact</div>
     <div class="row pt-4 pb-4">
         <div class="col-2"></div>
-        <div class="col-7">All my contacts.</div>
+        <div class="col-3">
+            <img src="/static/assets/Profile_circle.png" class="img-fluid" alt="Photo of Sara Clark.">
+        </div>
+        <div class="col-5 pt-5">
+            <p class="lh-1">
+            <span class="header">contact me</span></br>
+            <span class="subheader">for work inquires </br> to say hello</span></p>
+            <div class="row">
+                <div class="col about-header"><a href="www.linkedin.com/in/tristabug" target="_blank"><img src="static/assets/linkedin.svg" alt="My LinkedIn Account" /></a> find me on LinkedIn</div>
+            </div>
+            <div class="row">
+                <div class="col about-header"><a href="https://github.com/tristabug" target="_blank"><img src="static/assets/github.svg" alt="My Github Account" /></a> check me out on Github</div>
+            </div>
+            <div class="row">
+                <div class="col about-header"><img src="static/assets/arrow-down-short.svg" alt="Arrow pointing to form." /> Or send me an email with the form below</div>
+            </div>
+        </div>
         <div class="col-2 flex-column ms-auto">{% include 'nav.html' %}</div>
+    </div>
+    <div class="row pb-4">
+        <div class="col-4"></div>
+        <div class="col-6">
+            <div class="row shadow-box rounded-start align-items-center" style="background-color:var(--main);margin-left:1em;height:300px;">
+                <form class="form-control-sm">
+                    <div class="form-group row mb-1">
+                        <div class="col-3 align-content-center text-end"><label for="email-name">Name:</label></div>
+                        <input type="text" class="col form-control d-flex justify-content-start" id="email-name">
+                    </div>
+                    <div class="form-group row mb-1">
+                        <div class="col-3 align-content-center text-end"><label for="email-address">Email:</label></div>
+                        <input type="email" class="col form-control d-flex justify-content-start" id="email-address" aria-describedby="emailHelp" placeholder="">
+                    </div>
+                    <div class="form-group row mb-1">
+                        <div class="col-3 align-content-center text-end"><label for="email-subject">Subject:</label></div>
+                        <input type="text" class="col form-control d-flex justify-content-start" id="email-subject" placeholder="">
+                    </div>
+                    <div class="form-group row mb-1">
+                        <div class="col-3 text-end"><label for="email-message">Message:</label></div>
+                        <textarea class="col form-control d-flex justify-content-start" id="email-message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn my-btn btn-sm float-right">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-2"><div class="row shadow-box" style="background-color:var(--main);height:300px;"></div></div>
     </div>
 {% endblock %}
