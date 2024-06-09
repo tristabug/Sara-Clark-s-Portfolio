@@ -1,6 +1,22 @@
-/* styles for resume.html only */
-
+/* styles for resume and included pages only */
 #resume-pdf {
+    height: 300px;
+    width: 100%;
+}
+
+#lor-pdf {
     height: 400px;
-    width: 50%;
+    width: 100%;
+}
+
+.thumb-border {
+    border: solid black 1px;
+}
+
+a.thumb-lor:hover img {
+    border: solid var(--main) 3px;
+}
+
+.active-thumb {
+    border: solid var(--main) 3px;
 }

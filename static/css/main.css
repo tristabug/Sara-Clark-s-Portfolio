@@ -1,5 +1,4 @@
 /* styles for entire website */
-
 /* global colors */
 :root {
     --main: purple;
@@ -39,10 +38,51 @@ ul.navbar-nav li a.active {
     font-weight: bold;
 }
 
+/* text */
+.header {
+    font-size: 300%;
+}
+
+.subheader {
+    font-size: 150%;
+}
+
+.oneliner {
+    line-height:2.5;
+    color: var(--main);
+    font-style: italic;
+}
+
+.main-text {
+    font-size: 80%;
+}
+
+.about-header {
+    font-size: 70%;
+}
+
+.doc-link {
+    font-size: 70%;
+    font-weight: normal;
+}
+
+/* shadow */
+.shadow-box {
+    box-shadow: 7px 5px 5px gray;
+}
+
 /* footer */
 #footer {
     float: left;
     text-align: center;
     width: 100%;
     font-size: 70%;
+    margin-top: 1em;
+    padding-top: 3em;
+    padding-bottom: 0.5em;
+}
+
+.doc-full-view {
+    min-height: 600px;
+    width: 100%;
 }

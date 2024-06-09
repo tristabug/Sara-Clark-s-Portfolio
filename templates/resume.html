@@ -1,20 +1,29 @@
 {% extends "base.html" %}
 
-{% block javascript %}<script src="static/javascript/base.js"></script>{% endblock %}
+{% block javascript %}<script src="static/javascript/base.js"></script><script src="static/javascript/resume.js"></script>{% endblock %}
 {% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}"><link rel="stylesheet" href="{{ url_for('static', filename='css/skills.css') }}">{% endblock %}
 {% block title %}Resume{% endblock %}
 {% block content %}
   <div id="current-page" style="display: none;">#resume</div>
-  <div class="row pb-4">
+  <div class="row pt-4 pb-4">
     <div class="col-2"></div>
-    <div class="col-4"><iframe id="resume-pdf" src="https://docs.google.com/gview?url=https://github.com/tristabug/SaraClarks-Portfolio/raw/preprod/static/assets/ClarkSResume_ContactInfoFree.pdf&embedded=true&embedded=true" frameborder="0"></iframe></div>
-    <div class="col-3"></div>
+    <div class="col-3 pt-5">
+      <p class="lh-1">
+        <span class="header">resume</span></br>
+        <span class="main-text">After two years in tech, I'd say what I really do is solve problems in creative ways with applicable technologies.</br>
+          <span class="text-center oneliner">I absolutely love what I do.</span>
+          </br>I started later in life, making a career pivot in my 30s to pursue software and app development. I enjoy the life-long pursuit of knowledge that development demands, and the constant challenges it brings.
+          </br><span class="doc-link"><a href="https://github.com/tristabug/SaraClarks-Portfolio/raw/preprod/static/assets/ClarkSResume_ContactInfoFree.pdf" download="newfilename">PDF </a> | <a href="/resumeFV" target="_blank">Full-View</a></span>
+        </span>
+      </p>
+    </div>
+    <div class="col-5 shadow p-2 mb-5 rounded"><iframe id="resume-pdf" src="https://docs.google.com/gview?url=https://github.com/tristabug/SaraClarks-Portfolio/raw/preprod/static/assets/ClarkSResume_ContactInfoFree.pdf&embedded=true&embedded=true" ></iframe></div>
     <div class="col-2 flex-column ms-auto">{% include 'nav.html' %}</div>
   </div>
-  <div class="row" id="skills">
-      <h5>skills</h5></div>
-      <div class="col-1"></div>
-      <div class="col">{% include 'skills.html' %}</div>
-      <div class="col-1"></div>
+  <div class="row pt-4 pb-4">
+    {% include 'skills.html' %}
+  </div>
+  <div class="row pt-4 pb-4">
+    {% include 'lors.html' %}
   </div>
 {% endblock %}

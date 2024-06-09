@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block javascript %}{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">{% endblock %}
+{% block title %}Resume{% endblock %}
+{% block content %}
+    <div class="row pt-4">
+        <div class="col-1"></div>
+        <div class="col shadow p-2 mb-5 rounded">
+            <iframe class="doc-full-view" src="https://docs.google.com/gview?url=https://github.com/tristabug/SaraClarks-Portfolio/raw/preprod/static/assets/ClarkSResume_ContactInfoFree.pdf&embedded=true&embedded=true"></iframe>
+        </div>
+        <div class="col-1"></div>
+    </div>
+{% endblock %}
