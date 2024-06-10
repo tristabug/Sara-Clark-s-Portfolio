@@ -7,7 +7,32 @@
     <div id="current-page" style="display: none;">#contact</div>
     <div class="row pt-4 pb-4">
         <div class="col-2"></div>
-        <div class="col-7">All my contacts.</div>
+        <div class="col-3">
+            <img src="/static/assets/Profile_circle.png" class="img-fluid" alt="Photo of Sara Clark.">
+        </div>
+        <div class="col-5 pt-5">
+            <p class="lh-1">
+            <span class="header">contact me</span></br>
+            <span class="subheader">for work inquires </br> to say hello</span></p>
+            <div class="row">
+                <div class="col about-header"><a href="www.linkedin.com/in/tristabug" target="_blank"><img src="static/assets/linkedin.svg" alt="My LinkedIn Account" /> Find me on LinkedIn.</a></div>
+            </div>
+            <div class="row pt-1">
+                <div class="col about-header"><a href="https://github.com/tristabug" target="_blank"><img src="static/assets/github.svg" alt="My Github Account" /> Check me out on Github.</a></div>
+            </div>
+            <div class="row pt-1">
+                <div class="col about-header" style="font-weight:bold;"><img src="static/assets/arrow-down-short.svg" alt="Arrow pointing to form." /> Send me an email with the form below.</div>
+            </div>
+        </div>
         <div class="col-2 flex-column ms-auto">{% include 'nav.html' %}</div>
+    </div>
+    <div class="row pb-4">
+        <div class="col-4"></div>
+        <div class="col-6">
+            <div class="row shadow-box rounded-start align-items-center" style="background-color:var(--main);margin-left:1em;height:300px;">
+                {% include 'contact_form.html' %}
+            </div>
+        </div>
+        <div class="col-2"><div class="row shadow-box" style="background-color:var(--main);height:300px;"></div></div>
     </div>
 {% endblock %}

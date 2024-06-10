@@ -86,3 +86,22 @@ ul.navbar-nav li a.active {
     min-height: 600px;
     width: 100%;
 }
+
+.my-btn {
+    background-color: white;
+    color: var(--main);
+    float: right;
+    margin-top: 0.5em;
+}
+
+.my-btn:hover {
+    background-color: white;
+    color: var(--main);
+    font-weight: bold;
+    box-shadow: 3px 1px 1px black;
+}
+
+label {
+    color: white;
+    font-weight: bold;
+}
