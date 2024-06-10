@@ -41,7 +41,7 @@ def contact():
 # projects page
 @app.route('/projects')
 def projects():
-    return render_template("projects.html")
+    return render_template("projects.html", projects=projects)
 
 # resume_fullview page
 @app.route('/resumeFV')
@@ -101,3 +101,11 @@ def send(subject_line, message):
     message.recipients = [toEmail]
     message.sender = senderEmail
     mail.send(message)
+
+# projects
+projects = [ 
+        {'name': "project 1", 'description': "Project1 description.", 'type': "Web App", 'specs' : ["Ruby on Rails", "CSS"], 'challenges': "These are the project1 challenges.", 'learned': "I learned a lot on this project.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb1 photo."}}}, 
+        {'name': "project 2", 'description': "Project2 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project2 challenges.", 'learned': "I learned too much on this project2.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb2 photo."}}},
+        {'name': "project 3", 'description': "Project3 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project3 challenges.", 'learned': "I learned too much on this project3.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb3 photo."}}},
+        {'name': "project 4", 'description': "Project4 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project4 challenges.", 'learned': "I learned too much on this project4.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb4 photo."}}}
+]
