@@ -1,6 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from flask_mail import Mail, Message
 
 app = Flask(__name__)
+toEmail = 'sara.clark88@gmail.com'
+senderEmail = 'mailtrap@demomailtrap.com'
+
+app.config['MAIL_SERVER'] = 'live.smtp.mailtrap.io'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USERNAME'] = 'api'
+app.config['MAIL_PASSWORD'] = '2ef3caebce81870cfbe1ef48fa749868'
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
+mail=Mail(app)
 
 # ROUTES
 # home page
@@ -13,9 +24,18 @@ def home():
 def resume():
     return render_template("resume.html", skills=skills)
 
-# lors page
-@app.route('/contact')
+# contact page 
+@app.route('/contact', methods=["POST", "GET"])
 def contact():
+    sender_name = request.form.get("email_name")
+    sender_email = request.form.get("email_address")
+    subject = request.form.get("email_subject")
+    message = request.form.get("email_message")
+
+    if request.method == 'POST':
+        message = contactFormMessage(sender_name, sender_email, message)
+        send(subject, message)
+
     return render_template("contact.html")
 
 # projects page
@@ -69,3 +89,15 @@ skills = {
         {'name': "Customer Service", 'years': "15+", 'w': "150"},
         {'name': "Test-Driven Programming", 'years': "2+", 'w': "20"}
 ]}
+
+# contact form email
+def contactFormMessage(sender_name, sender_email, message_body):
+    message = Message()
+    message.html = "<h3>Contact Form Submission</h3><p><b>From: </b>" + sender_name + "</p><p><b>From Email: </b>" + sender_email + "</p><p><b>Message: </b>" + message_body + "</p>"
+    return message
+
+def send(subject_line, message):
+    message.subject = subject_line
+    message.recipients = [toEmail]
+    message.sender = senderEmail
+    mail.send(message)
