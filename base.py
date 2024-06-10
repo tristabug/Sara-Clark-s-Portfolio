@@ -17,7 +17,7 @@ mail=Mail(app)
 # home page
 @app.route('/')
 def home():
-    return render_template("home.html")
+    return render_template("home.html", projects=projects)
 
 # resume page
 @app.route('/resume')
@@ -47,6 +47,18 @@ def projects():
 @app.route('/resumeFV')
 def resumeFV():
     return render_template("resume_fullview.html")
+
+# contact form email
+def contactFormMessage(sender_name, sender_email, message_body):
+    message = Message()
+    message.html = "<h3>Contact Form Submission</h3><p><b>From: </b>" + sender_name + "</p><p><b>From Email: </b>" + sender_email + "</p><p><b>Message: </b>" + message_body + "</p>"
+    return message
+
+def send(subject_line, message):
+    message.subject = subject_line
+    message.recipients = [toEmail]
+    message.sender = senderEmail
+    mail.send(message)
 
 skills = {
     'language' : [
@@ -90,20 +102,12 @@ skills = {
         {'name': "Test-Driven Programming", 'years': "2+", 'w': "20"}
 ]}
 
-# contact form email
-def contactFormMessage(sender_name, sender_email, message_body):
-    message = Message()
-    message.html = "<h3>Contact Form Submission</h3><p><b>From: </b>" + sender_name + "</p><p><b>From Email: </b>" + sender_email + "</p><p><b>Message: </b>" + message_body + "</p>"
-    return message
-
-def send(subject_line, message):
-    message.subject = subject_line
-    message.recipients = [toEmail]
-    message.sender = senderEmail
-    mail.send(message)
-
 # projects
 projects = [ 
+        {'name': "project 1", 'description': "Project1 description.", 'type': "Web App", 'specs' : ["Ruby on Rails", "CSS"], 'challenges': "These are the project1 challenges.", 'learned': "I learned a lot on this project.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb1 photo."}}}, 
+        {'name': "project 2", 'description': "Project2 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project2 challenges.", 'learned': "I learned too much on this project2.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb2 photo."}}},
+        {'name': "project 3", 'description': "Project3 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project3 challenges.", 'learned': "I learned too much on this project3.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb3 photo."}}},
+        {'name': "project 4", 'description': "Project4 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project4 challenges.", 'learned': "I learned too much on this project4.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb4 photo."}}},
         {'name': "project 1", 'description': "Project1 description.", 'type': "Web App", 'specs' : ["Ruby on Rails", "CSS"], 'challenges': "These are the project1 challenges.", 'learned': "I learned a lot on this project.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb1 photo."}}}, 
         {'name': "project 2", 'description': "Project2 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project2 challenges.", 'learned': "I learned too much on this project2.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb2 photo."}}},
         {'name': "project 3", 'description': "Project3 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project3 challenges.", 'learned': "I learned too much on this project3.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb3 photo."}}},

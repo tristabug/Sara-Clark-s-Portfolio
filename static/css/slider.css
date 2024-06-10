@@ -1,0 +1,23 @@
+/* styles for the project slider only  */
+.project-slider {
+    margin-bottom: 3em;
+}
+
+div.scroll-container {
+    display: inline-flex;
+    background-color: black;
+    overflow: auto;
+    white-space: nowrap;
+    height: 100%;
+    width: 100%;
+}
+
+div.project-container img {
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+.project-container {
+    margin: 0 .05em 0 0.05em !important;
+}
