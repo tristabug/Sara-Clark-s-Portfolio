@@ -43,6 +43,15 @@ def contact():
 def projects():
     return render_template("projects.html", projects=projects)
 
+# projects/1 page
+@app.route('/project/<id>')
+def project(id):
+    for project in projects:
+        if project['id'] == id:
+            project = project['id']
+            break
+    return render_template("project.html", project=project)
+
 # resume_fullview page
 @app.route('/resumeFV')
 def resumeFV():
@@ -104,12 +113,12 @@ skills = {
 
 # projects
 projects = [ 
-        {'name': "project 1", 'description': "Project1 description.", 'type': "Web App", 'specs' : ["Ruby on Rails", "CSS"], 'challenges': "These are the project1 challenges.", 'learned': "I learned a lot on this project.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb1 photo."}}}, 
-        {'name': "project 2", 'description': "Project2 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project2 challenges.", 'learned': "I learned too much on this project2.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb2 photo."}}},
-        {'name': "project 3", 'description': "Project3 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project3 challenges.", 'learned': "I learned too much on this project3.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb3 photo."}}},
-        {'name': "project 4", 'description': "Project4 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project4 challenges.", 'learned': "I learned too much on this project4.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb4 photo."}}},
-        {'name': "project 1", 'description': "Project1 description.", 'type': "Web App", 'specs' : ["Ruby on Rails", "CSS"], 'challenges': "These are the project1 challenges.", 'learned': "I learned a lot on this project.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb1 photo."}}}, 
-        {'name': "project 2", 'description': "Project2 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project2 challenges.", 'learned': "I learned too much on this project2.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb2 photo."}}},
-        {'name': "project 3", 'description': "Project3 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project3 challenges.", 'learned': "I learned too much on this project3.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb3 photo."}}},
-        {'name': "project 4", 'description': "Project4 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project4 challenges.", 'learned': "I learned too much on this project4.", 'visuals' : {'thumb': {'file': "static/assets/miniProfilePhoto.jpg", 'desc': "Thumb4 photo."}}}
+        {'id': 1, 'name': "project 1", 'description': "Project1 description.", 'type': "Web App", 'specs' : ["Ruby on Rails", "CSS"], 'challenges': "These are the project1 challenges.", 'learned': "I learned a lot on this project.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb1 photo."}}}, 
+        {'id': 2, 'name': "project 2", 'description': "Project2 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project2 challenges.", 'learned': "I learned too much on this project2.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb2 photo."}}},
+        {'id': 3, 'name': "project 3", 'description': "Project3 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project3 challenges.", 'learned': "I learned too much on this project3.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb3 photo."}}},
+        {'id': 4, 'name': "project 4", 'description': "Project4 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project4 challenges.", 'learned': "I learned too much on this project4.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb4 photo."}}},
+        {'id': 5, 'name': "project 1", 'description': "Project1 description.", 'type': "Web App", 'specs' : ["Ruby on Rails", "CSS"], 'challenges': "These are the project1 challenges.", 'learned': "I learned a lot on this project.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb1 photo."}}}, 
+        {'id': 6, 'name': "project 2", 'description': "Project2 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project2 challenges.", 'learned': "I learned too much on this project2.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb2 photo."}}},
+        {'id': 7, 'name': "project 3", 'description': "Project3 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project3 challenges.", 'learned': "I learned too much on this project3.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb3 photo."}}},
+        {'id': 8, 'name': "project 4", 'description': "Project4 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project4 challenges.", 'learned': "I learned too much on this project4.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb4 photo."}}}
 ]

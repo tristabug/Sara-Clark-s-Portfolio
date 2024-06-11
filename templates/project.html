@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block javascript %}<script src="/static/javascript/base.js"></script>{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">{% endblock %}
+{% block title %}Projects{% endblock %}
+{% block content %}
+    <div id="current-page" style="display: none;">#projects</div>
+    <div class="row pt-4">
+        <div class="col-2"></div>
+        <div class="col-8 pt-5">
+            <p> Project with id: {{ project['id'] }}</p>
+            <p> Project with id: {{ project['name'] }}</p>
+            <img src={{ project['visuals']['thumb']['file'] }} alt="{{ project['visuals']['thumb']['desc'] }}">
+        </div>
+        <div class="col-2 flex-column ms-auto">{% include 'nav.html' %}</div>
+    </div>
+
+{% endblock %}
