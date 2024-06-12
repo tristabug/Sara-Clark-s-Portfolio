@@ -12,7 +12,8 @@
         </div>
         <div class="col-8 pt-5" style="padding-left:0;padding-right:0;margin:0;">
             <p class="lh-1 header p-0 m-0" style="border-bottom: solid var(--main) 4px;">projects</p>
-            <p class="lh-1 subheader p-0 m-0">just some of my favorites</p>
+            <p class="lh-1 subheader p-0 m-0" style="font-style:italic;">( currently under development - projects coming soon )</p>
+            <!-- <p class="lh-1 subheader p-0 m-0">just some of my favorites</p> -->
         </div>
         <div class="col-2 flex-column ms-auto">{% include 'nav.html' %}</div>
     </div>
@@ -20,7 +21,7 @@
         <div class="col-2"></div>
         <div class="col-8 p-0 m-0">
             <div class="row">
-                {% for project in projects %}
+                <!-- {% for project in projects %}
                         <div class="project-container">
                             <img src={{ project['visuals']['thumb']['file'] }} alt="{{ project['visuals']['thumb']['desc'] }}" class="image">
                             <a href="/project/{{ project['id'] }}">
@@ -29,8 +30,16 @@
                                 </div>
                             </a>
                         </div>
-                    
-                {%endfor%} 
+                {%endfor%}  -->
+                {% for i in range(1, 7) %}
+                    {% set icon = icons[i] %}
+                    <div class="project-container">
+                        <img src={{ icon['visuals']['thumb']['file'] }} alt="{{ icon['visuals']['thumb']['desc'] }}" class="image">
+                        <div class="project-overlay">
+                            <p class="text lh-1"><span style="font-size:110%;font-weight:bold;">{{ icon['name'] }}</span></br>{{ icon['type'] }}</p>
+                        </div>
+                    </div>
+                {%endfor%}
             </div>
         </div>
         <div class="col-2"></div>

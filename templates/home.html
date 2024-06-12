@@ -25,15 +25,27 @@
         <div class="col-2 flex-column ms-auto">{% include 'nav.html' %}</div>
     </div>
     <div class="row">
-        <div class="col text-end"><h5><a href="/projects">projects</a></h5></div>
+        <div class="col text-end align-content-center"><h5><span style="font-style:italic;font-size: 60%;">( currently under development - projects coming soon )</span> projects</h5></div>
+        <!-- <div class="col text-end"><h5><a href="/projects">projects</a></h5></div> -->
     </div>
     <div class="row project-slider">
         <div class="scroll-container">
-            {% for project in projects %}
+            <!-- {% for project in projects %}
                 <div class="project-container">
                     <img src={{ project['visuals']['thumb']['file'] }} alt="{{ project['visuals']['thumb']['desc'] }}" class="image">
+                    <a href="/project/{{ project['id'] }}">
+                        <div class="project-overlay">
+                            <p class="text lh-1"><span style="font-size:110%;font-weight:bold;">{{ project['name'] }}</span></br>{{ project['type'] }}</p>
+                        </div>
+                    </a>
+                </div>
+            {%endfor%}  -->
+            {% for i in icons %}
+                {% set icon = icons.get(i) %}
+                <div class="project-container">
+                    <img src={{ icon['visuals']['thumb']['file'] }} alt="{{ icon['visuals']['thumb']['desc'] }}" class="image">
                     <div class="project-overlay">
-                        <p class="text lh-1"><span style="font-size:110%;font-weight:bold;">{{ project['name'] }}</span></br>{{ project['type'] }}</p>
+                        <p class="text lh-1"><span style="font-size:110%;font-weight:bold;">{{ icon['name'] }}</span></br>{{ icon['type'] }}</p>
                     </div>
                 </div>
             {%endfor%} 

@@ -17,7 +17,7 @@ mail=Mail(app)
 # home page
 @app.route('/')
 def home():
-    return render_template("home.html", projects=projects)
+    return render_template("home.html", projects=projects, icons=project_icons)
 
 # resume page
 @app.route('/resume')
@@ -41,7 +41,7 @@ def contact():
 # projects page
 @app.route('/projects')
 def projects():
-    return render_template("projects.html", projects=projects)
+    return render_template("projects.html", projects=projects, icons=project_icons)
 
 # projects/1 page
 @app.route('/project/<id>')
@@ -113,12 +113,27 @@ skills = {
 
 # projects
 projects = [ 
-        {'id': 1, 'name': "project 1", 'description': "Project1 description.", 'type': "Web App", 'specs' : ["Ruby on Rails", "CSS"], 'challenges': "These are the project1 challenges.", 'learned': "I learned a lot on this project.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb1 photo."}}}, 
-        {'id': 2, 'name': "project 2", 'description': "Project2 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project2 challenges.", 'learned': "I learned too much on this project2.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb2 photo."}}},
-        {'id': 3, 'name': "project 3", 'description': "Project3 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project3 challenges.", 'learned': "I learned too much on this project3.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb3 photo."}}},
-        {'id': 4, 'name': "project 4", 'description': "Project4 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project4 challenges.", 'learned': "I learned too much on this project4.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb4 photo."}}},
-        {'id': 5, 'name': "project 1", 'description': "Project1 description.", 'type': "Web App", 'specs' : ["Ruby on Rails", "CSS"], 'challenges': "These are the project1 challenges.", 'learned': "I learned a lot on this project.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb1 photo."}}}, 
-        {'id': 6, 'name': "project 2", 'description': "Project2 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project2 challenges.", 'learned': "I learned too much on this project2.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb2 photo."}}},
-        {'id': 7, 'name': "project 3", 'description': "Project3 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project3 challenges.", 'learned': "I learned too much on this project3.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb3 photo."}}},
-        {'id': 8, 'name': "project 4", 'description': "Project4 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project4 challenges.", 'learned': "I learned too much on this project4.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb4 photo."}}}
+        {'id': 9, 'name': "project 1", 'description': "Project1 description.", 'type': "Web App", 'specs' : ["Ruby on Rails", "CSS"], 'challenges': "These are the project1 challenges.", 'learned': "I learned a lot on this project.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb1 photo."}}}, 
+        {'id': 10, 'name': "project 2", 'description': "Project2 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project2 challenges.", 'learned': "I learned too much on this project2.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb2 photo."}}},
+        {'id': 11, 'name': "project 3", 'description': "Project3 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project3 challenges.", 'learned': "I learned too much on this project3.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb3 photo."}}},
+        {'id': 12, 'name': "project 4", 'description': "Project4 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project4 challenges.", 'learned': "I learned too much on this project4.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb4 photo."}}},
+        {'id': 13, 'name': "project 1", 'description': "Project1 description.", 'type': "Web App", 'specs' : ["Ruby on Rails", "CSS"], 'challenges': "These are the project1 challenges.", 'learned': "I learned a lot on this project.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb1 photo."}}}, 
+        {'id': 14, 'name': "project 2", 'description': "Project2 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project2 challenges.", 'learned': "I learned too much on this project2.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb2 photo."}}},
+        {'id': 15, 'name': "project 3", 'description': "Project3 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project3 challenges.", 'learned': "I learned too much on this project3.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb3 photo."}}},
+        {'id': 16, 'name': "project 4", 'description': "Project4 description.", 'type': "Web App", 'specs' : ["Python", "Flask"], 'challenges': "These are the project4 challenges.", 'learned': "I learned too much on this project4.", 'visuals' : {'thumb': {'file': "/static/assets/miniProfilePhoto.jpg", 'desc': "Thumb4 photo."}}}
 ]
+
+# projects - placeholder icons
+# software dev process (plan - dev - code - test - release)
+project_icons = { 
+        1 : {'name': "Planning", 'description': "In the process of planning, which includes determining requirements, data needs, security, and creating wireframes.", 'type': "Placeholder Icon", 'specs' : [], 'challenges': "", 'learned': "", 'visuals' : {'thumb': {'file': "/static/assets/icons/planningIcon.jpg", 'desc': "Icon of the planning phase of development."}}}, 
+        2 : {'name': "Developing", 'description': "Currently in development.", 'type': "Placeholder Icon", 'specs' : [], 'challenges': "", 'learned': "", 'visuals' : {'thumb': {'file': "/static/assets/icons/inDevIcon.jpg", 'desc': "Icon of the development phase."}}},
+        3 : {'name': "Coding", 'description': "Currently coding this project.", 'type': "Placeholder Icon", 'specs' : [], 'challenges': "", 'learned': "", 'visuals' : {'thumb': {'file': "/static/assets/icons/codingIcon.jpg", 'desc': "Icon of the coding phase."}}},
+        4 : {'name': "Testing", 'description': "This project is currently being tested.", 'type': "Placeholder Icon", 'specs' : [], 'challenges': "", 'learned': "", 'visuals' : {'thumb': {'file': "/static/assets/icons/testingIcon.jpg", 'desc': "Icon of the testing phase."}}},
+        5 : {'name': "Releasing", 'description': "This project is about to be released!", 'type': "Placeholder Icon", 'specs' : [], 'challenges': "", 'learned': "", 'visuals' : {'thumb': {'file': "/static/assets/icons/releasingIcon.jpg", 'desc': "Icon of the releasing phase."}}},
+        6 : {'name': "Planning", 'description': "In the process of planning, which includes determining requirements, data needs, security, and creating wireframes.", 'type': "Placeholder Icon", 'specs' : [], 'challenges': "", 'learned': "", 'visuals' : {'thumb': {'file': "/static/assets/icons/planningIcon.jpg", 'desc': "Icon of the planning phase of development."}}},
+        7 : {'name': "Developing", 'description': "Currently in development.", 'type': "Placeholder Icon", 'specs' : [], 'challenges': "", 'learned': "", 'visuals' : {'thumb': {'file': "/static/assets/icons/inDevIcon.jpg", 'desc': "Icon of the development phase."}}},
+        8 : {'name': "Coding", 'description': "Currently coding this project.", 'type': "Placeholder Icon", 'specs' : [], 'challenges': "", 'learned': "", 'visuals' : {'thumb': {'file': "/static/assets/icons/codingIcon.jpg", 'desc': "Icon of the coding phase."}}},
+        9 : {'name': "Testing", 'description': "This project is currently being tested.", 'type': "Placeholder Icon", 'specs' : [], 'challenges': "", 'learned': "", 'visuals' : {'thumb': {'file': "/static/assets/icons/testingIcon.jpg", 'desc': "Icon of the testing phase."}}},
+        10 : {'name': "Releasing", 'description': "This project is about to be released!", 'type': "Placeholder Icon", 'specs' : [], 'challenges': "", 'learned': "", 'visuals' : {'thumb': {'file': "/static/assets/icons/releasingIcon.jpg", 'desc': "Icon of the releasing phase."}}} 
+}

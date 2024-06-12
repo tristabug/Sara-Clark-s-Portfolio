@@ -6,13 +6,15 @@
 {% block content %}
     <div id="current-page" style="display: none;">#projects</div>
     <div class="row pt-4">
-        <div class="col-2"></div>
-        <div class="col-8 pt-5">
-            <p> Project with id: {{ project['id'] }}</p>
-            <p> Project with id: {{ project['name'] }}</p>
+        <div class="col-2" style="padding:0;margin:0;">
+            <p class="lh-1 header" style="height:100px;border-bottom: solid var(--main) 4px;"></p>
+            <p class="lh-1 subheader"></p>
+        </div>
+        <div class="col-8 pt-5" style="padding-left:0;padding-right:0;margin:0;">
+            <p class="lh-1 header p-0 m-0" style="border-bottom: solid var(--main) 4px;">{{ project['name'] }}</p>
+            <p class="lh-1 subheader p-0 m-0">{{ project['description'] }}</p>
             <img src={{ project['visuals']['thumb']['file'] }} alt="{{ project['visuals']['thumb']['desc'] }}">
         </div>
         <div class="col-2 flex-column ms-auto">{% include 'nav.html' %}</div>
     </div>
-
 {% endblock %}
