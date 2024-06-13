@@ -30,10 +30,11 @@
     </div>
     <div class="row project-slider">
         <div class="scroll-container">
-            <!-- {% for project in projects %}
+            <!-- {% for p in projects %}
+             {% set project = icons.get(p) %}
                 <div class="project-container">
                     <img src={{ project['visuals']['thumb']['file'] }} alt="{{ project['visuals']['thumb']['desc'] }}" class="image">
-                    <a href="/project/{{ project['id'] }}">
+                    <a href="/project/{{ p }}">
                         <div class="project-overlay">
                             <p class="text lh-1"><span style="font-size:110%;font-weight:bold;">{{ project['name'] }}</span></br>{{ project['type'] }}</p>
                         </div>

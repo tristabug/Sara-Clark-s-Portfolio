@@ -1,5 +1,4 @@
 /* projects styles */
-
 .project-container {
     position: relative;
     width: 30%;
@@ -39,4 +38,101 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: left;
+}
+
+/* modal styles */
+.modal.fade {
+    transition: opacity .0s linear !important;
+}
+
+.modal.fade:not(.show).right .modal-dialog {
+	-webkit-transform: translate3d(125%, 0, 0);
+	-ms-transform: translate3d(125%, 0, 0);
+	-o-transform: translate3d(125%, 0, 0);
+	transform: translate3d(125%, 0, 0);
+}
+
+.modal-project {
+    max-width: 50%;
+    min-height: auto;
+    margin-right: 0;
+    margin-top: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+
+.modal-content {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important; 
+}
+
+.modal {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.modal-footer {
+    border: none;
+}
+
+.mainImg {
+    display: block;
+    overflow: hidden;
+    padding: 0.5em;
+    margin: 0;
+    width: 100%;
+}
+
+.mainImg img {
+    width: 100%;
+    height: auto;
+}
+
+.project-fv img {
+    width: 100%;
+    height: auto;
+}
+
+.btn-close {
+    background-image: none;
+    white-space: nowrap;
+    font-style: italic;
+    font-size: 70%;
+}               
+
+.btn-close:hover, .btn-close:active {
+    font-weight: bold;
+    color: var(--main);
+    box-shadow: none;
+}
+
+.modal-description {
+    padding-top: 0;
+    font-size: 80%;
+}
+
+.project-fv-description {
+    padding-top: 1em;
+    font-size: 80%;
+}
+
+.project-fv {
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    width: 50%;
+}
+
+.spec {
+    background-color: lightgray;
+    padding: 0.25em;
+    font-size: 80%;
+    margin: 0 0.25em 0 0.25em;
+}
+
+#modal-specs {
+    padding-top: 0;
+    margin-top: 0;
 }
