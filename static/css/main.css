@@ -92,13 +92,30 @@ ul.navbar-nav li a.active {
     color: var(--main);
     float: right;
     margin-top: 0.5em;
+    font-weight: bold;
+    box-shadow: 3px 3px 3px black;
 }
 
 .my-btn:hover {
     background-color: white;
     color: var(--main);
     font-weight: bold;
-    box-shadow: 3px 1px 1px black;
+    box-shadow: 5px 5px 5px black;
+}
+
+.proj-btn {
+    background-color: var(--main);
+    color: white;
+    /* float: right; */
+    font-weight: bold;
+    box-shadow: 3px 3px 3px gray;
+}
+
+.proj-btn:hover {
+    background-color: white;
+    color: var(--main);
+    font-weight: bold;
+    box-shadow: 5px 5px 5px gray;
 }
 
 label {

@@ -1,13 +1,55 @@
 {% extends "base.html" %}
 
-{% block javascript %}<script src="static/javascript/base.js"></script>{% endblock %}
-{% block styles %}{% endblock %}
+{% block javascript %}
+    <script src="/static/javascript/base.js"></script>
+    <script src="/static/javascript/modal.js"></script>
+{% endblock %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/projects.css') }}">{% endblock %}
 {% block title %}Projects{% endblock %}
 {% block content %}
     <div id="current-page" style="display: none;">#projects</div>
-    <div class="row pt-4 pb-4">
-        <div class="col-2"></div>
-        <div class="col-7">All my cool projects.</div>
+    <div class="row pt-4">
+        <div class="col-2" style="padding:0;margin:0;">
+            <p class="header" style="height:124px;border-bottom: solid var(--main) 4px;"></p>
+            <p class="subheader"></p>
+        </div>
+        <div class="col-8 pt-5" style="padding-left:0;padding-right:0;margin:0;">
+            <p class="header p-0 m-0" style="border-bottom: solid var(--main) 4px;">projects</p>
+            <p class="project-fv-description p-0 m-0" style="font-style:italic;">currently under development - projects coming soon</p>
+            <!-- <p class="subheader p-0 m-0">just some of my favorites</p> -->
+        </div>
         <div class="col-2 flex-column ms-auto">{% include 'nav.html' %}</div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 p-0 m-0">
+            <div class="row">
+                <!-- {% for p in projects %}
+                         {% set project = icons.get(p) %}
+                        <div class="project-container">
+                            <img src={{ project['visuals']['thumb']['file'] }} alt="{{ project['visuals']['thumb']['desc'] }}" class="image">
+                            <a href="/project/{{ p }}">
+                                <div class="project-overlay">
+                                    <p class="text lh-1"><span style="font-size:110%;font-weight:bold;">{{ project['name'] }}</span></br>{{ project['type'] }}</p>
+                                </div>
+                            </a>
+                        </div>
+                {%endfor%}  -->
+                {% for i in range(1, 7) %}
+                    {% set icon = projects[i] %}
+                    <div class="project-container">
+                        <img src="{{ icon['visuals']['thumb']['file'] }}"" alt="{{ icon['visuals']['thumb']['desc'] }}" class="image">
+                        <a href="#reg-modal" data-bs-toggle="modal" onclick="setItem({{icon}}, {{i}});">
+                            <input type="hidden" class="current-title" name="this-name" value="3487">
+                            <div class="project-overlay" data-title="{{ icon['name'] }}"">
+                                <p class="text lh-1"><span style="font-size:110%;font-weight:bold;">{{ icon['name'] }}</span></br>{{ icon['type'] }}</p>
+                            </div>
+                        </a>
+                        {% include 'modal.html' %}
+                    </div>
+                {%endfor%}
+            </div>
+        </div>
+        <div class="col-2"></div>
     </div>
 {% endblock %}
