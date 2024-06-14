@@ -1,22 +1,22 @@
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
 
-app = Flask(__name__)
-toEmail = 'sara.clark88@gmail.com'
-senderEmail = 'mailtrap@demomailtrap.com'
+app = Flask(__name__)  #flask instance
 
-app.config['MAIL_SERVER'] = 'live.smtp.mailtrap.io'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USERNAME'] = 'api'
-app.config['MAIL_PASSWORD'] = '2ef3caebce81870cfbe1ef48fa749868'
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
-mail=Mail(app)
+# if app.config["ENV"] == "production":
+#     app.config.from_object("config.ProductionConfig")
+# elif app.config["ENV"] == "testing":
+#     app.config.from_object("config.TestingConfig")
+# else:
+#     app.config.from_object("config.DevelopmentConfig")
+
 
 # ROUTES
 # home page
 @app.route('/')
 def home():
+    # app.config['ENV'] = "development"
+    # print(app.config)
     return render_template("home.html", projects=projects, icons=project_icons)
 
 # resume page
@@ -27,6 +27,10 @@ def resume():
 # contact page 
 @app.route('/contact', methods=["POST", "GET"])
 def contact():
+    toEmail = app.config['MAIL_TO_EMAIL']
+    senderEmail = app.config['MAIL_SENDER_EMAIL']
+    mail=Mail(app)
+
     sender_name = request.form.get("email_name")
     sender_email = request.form.get("email_address")
     subject = request.form.get("email_subject")
@@ -34,7 +38,7 @@ def contact():
 
     if request.method == 'POST':
         message = contactFormMessage(sender_name, sender_email, message)
-        send(subject, message)
+        send(mail, subject, message, toEmail, senderEmail)
 
     return render_template("contact.html")
 
@@ -61,11 +65,22 @@ def contactFormMessage(sender_name, sender_email, message_body):
     message.html = "<h3>Contact Form Submission</h3><p><b>From: </b>" + sender_name + "</p><p><b>From Email: </b>" + sender_email + "</p><p><b>Message: </b>" + message_body + "</p>"
     return message
 
-def send(subject_line, message):
+def send(mail, subject_line, message, toEmail, senderEmail):
     message.subject = subject_line
     message.recipients = [toEmail]
     message.sender = senderEmail
     mail.send(message)
+
+# error pages
+# Invalid URL
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("errors/404.html"), 404
+
+# Internal Server Error
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template("errors/500.html"), 500
 
 skills = {
     'language' : [

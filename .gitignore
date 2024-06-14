@@ -2,6 +2,7 @@
 virt/
 scratch/
 .DS_Store
+config.py
 
 # Items used for reference and not app specific
 docs/tutorial-references-doc.py
